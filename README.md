@@ -2,30 +2,30 @@
 如果您是第一次安装，请等待1-2分钟后执行：docker exec -it jd bash git_pull，如你是旁路由,请更换网络模式添加--network host \,食用方法.！↓：
  ```
  docker run -dit \
-	-v $PWD/jd/config:/jd/config \
-	-v $PWD/jd/log:/jd/log \
+	-v home/jd/config:/jd/config \
+	-v home/jd/log:/jd/log \
 	-p 5678:5678 \
 	-e ENABLE_HANGUP=true \
 	-e ENABLE_WEB_PANEL=true \
 	--name jd \
 	--hostname jd \
 	--restart always \
-	noobx/jd:gitee
+	1554537386/jd:gitee
 ```
 ### 如需指定目录，请把$PWD更改为指定目录即可，不然则为当前目录！
 执行上面命令之后建议执行'docker logs -f jd'查看安装进度，直到出现Welcome to Node.js v1x.x.0.代表成功！
 #### 如需映射脚本出来直接在上面加一行!：
 ```
--v $PWD/jd/scripts:/jd/scripts \
+-v home/jd/scripts:/jd/scripts \
 ```
 
 node基础镜像
 ```
-noobx/jd:gitee
+1554537386/jd:gitee
 ```
 集成python与node镜像
 ```
-noobx/jd:py
+1554537386/jd:py
 ```
 shell一键安装docker与watchtower(by:老揭力)
 ```shell
